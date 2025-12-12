@@ -1,0 +1,39 @@
+
+@font-face {
+  font-family: 'Patrol';
+  src: url('../theme/DK_Display_Patrol.otf');
+}
+
+
+body {
+  overflow-x: hidden;
+  font-family: 'Patrol';
+  background-color: #009eb9 !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Animaciones */
+.flotante:hover img {
+  animation: ring 1s ease-in-out;
+}
+.flotante2 {
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+  z-index: 100;
+}
+
+@keyframes ring {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(-5deg); }
+  70% { transform: rotate(5deg); }
+  80% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+

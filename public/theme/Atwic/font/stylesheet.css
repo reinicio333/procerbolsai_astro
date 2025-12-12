@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'Atwic Regular Reversed';
+    src: url('Atwic-RegularReversed.eot');
+    src: local('Atwic Regular Reversed'), local('Atwic-RegularReversed'),
+        url('Atwic-RegularReversed.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-RegularReversed.woff2') format('woff2'),
+        url('Atwic-RegularReversed.woff') format('woff'),
+        url('Atwic-RegularReversed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-Medium.eot');
+    src: local('Atwic Medium'), local('Atwic-Medium'),
+        url('Atwic-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-Medium.woff2') format('woff2'),
+        url('Atwic-Medium.woff') format('woff'),
+        url('Atwic-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atwic Medium Reversed';
+    src: url('Atwic-MediumReversed.eot');
+    src: local('Atwic Medium Reversed'), local('Atwic-MediumReversed'),
+        url('Atwic-MediumReversed.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-MediumReversed.woff2') format('woff2'),
+        url('Atwic-MediumReversed.woff') format('woff'),
+        url('Atwic-MediumReversed.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-MediumItalic.eot');
+    src: local('Atwic Medium Italic'), local('Atwic-MediumItalic'),
+        url('Atwic-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-MediumItalic.woff2') format('woff2'),
+        url('Atwic-MediumItalic.woff') format('woff'),
+        url('Atwic-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-Light.eot');
+    src: local('Atwic Light'), local('Atwic-Light'),
+        url('Atwic-Light.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-Light.woff2') format('woff2'),
+        url('Atwic-Light.woff') format('woff'),
+        url('Atwic-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-Bold.eot');
+    src: local('Atwic Bold'), local('Atwic-Bold'),
+        url('Atwic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-Bold.woff2') format('woff2'),
+        url('Atwic-Bold.woff') format('woff'),
+        url('Atwic-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-Regular.eot');
+    src: local('Atwic Regular'), local('Atwic-Regular'),
+        url('Atwic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-Regular.woff2') format('woff2'),
+        url('Atwic-Regular.woff') format('woff'),
+        url('Atwic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-BoldItalic.eot');
+    src: local('Atwic Bold Italic'), local('Atwic-BoldItalic'),
+        url('Atwic-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-BoldItalic.woff2') format('woff2'),
+        url('Atwic-BoldItalic.woff') format('woff'),
+        url('Atwic-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-SemiBoldItalic.eot');
+    src: local('Atwic SemiBold Italic'), local('Atwic-SemiBoldItalic'),
+        url('Atwic-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-SemiBoldItalic.woff2') format('woff2'),
+        url('Atwic-SemiBoldItalic.woff') format('woff'),
+        url('Atwic-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic SemiBold Reversed';
+    src: url('Atwic-SemiBoldReversed.eot');
+    src: local('Atwic SemiBold Reversed'), local('Atwic-SemiBoldReversed'),
+        url('Atwic-SemiBoldReversed.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-SemiBoldReversed.woff2') format('woff2'),
+        url('Atwic-SemiBoldReversed.woff') format('woff'),
+        url('Atwic-SemiBoldReversed.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic Bold Reversed';
+    src: url('Atwic-BoldReversed.eot');
+    src: local('Atwic Bold Reversed'), local('Atwic-BoldReversed'),
+        url('Atwic-BoldReversed.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-BoldReversed.woff2') format('woff2'),
+        url('Atwic-BoldReversed.woff') format('woff'),
+        url('Atwic-BoldReversed.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-RegularItalic.eot');
+    src: local('Atwic Regular Italic'), local('Atwic-RegularItalic'),
+        url('Atwic-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-RegularItalic.woff2') format('woff2'),
+        url('Atwic-RegularItalic.woff') format('woff'),
+        url('Atwic-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-LightItalic.eot');
+    src: local('Atwic Light Italic'), local('Atwic-LightItalic'),
+        url('Atwic-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-LightItalic.woff2') format('woff2'),
+        url('Atwic-LightItalic.woff') format('woff'),
+        url('Atwic-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic Black Reversed';
+    src: url('Atwic-BlackReversed.eot');
+    src: local('Atwic Black Reversed'), local('Atwic-BlackReversed'),
+        url('Atwic-BlackReversed.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-BlackReversed.woff2') format('woff2'),
+        url('Atwic-BlackReversed.woff') format('woff'),
+        url('Atwic-BlackReversed.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-BlackItalic.eot');
+    src: local('Atwic Black Italic'), local('Atwic-BlackItalic'),
+        url('Atwic-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-BlackItalic.woff2') format('woff2'),
+        url('Atwic-BlackItalic.woff') format('woff'),
+        url('Atwic-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-SemiBold.eot');
+    src: local('Atwic SemiBold'), local('Atwic-SemiBold'),
+        url('Atwic-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-SemiBold.woff2') format('woff2'),
+        url('Atwic-SemiBold.woff') format('woff'),
+        url('Atwic-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atwic';
+    src: url('Atwic-Black.eot');
+    src: local('Atwic Black'), local('Atwic-Black'),
+        url('Atwic-Black.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-Black.woff2') format('woff2'),
+        url('Atwic-Black.woff') format('woff'),
+        url('Atwic-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atwic Light Reversed';
+    src: url('Atwic-LightReversed.eot');
+    src: local('Atwic Light Reversed'), local('Atwic-LightReversed'),
+        url('Atwic-LightReversed.eot?#iefix') format('embedded-opentype'),
+        url('Atwic-LightReversed.woff2') format('woff2'),
+        url('Atwic-LightReversed.woff') format('woff'),
+        url('Atwic-LightReversed.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+

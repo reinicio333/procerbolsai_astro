@@ -1,0 +1,50 @@
+---
+// src/components/CatalogModal.astro
+---
+
+<!-- Modal Desktop -->
+<div id="default-modal" tabindex="-1" aria-hidden="true"
+  class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
+  <div class="relative w-full max-w-5xl h-[90vh]">
+    <div class="relative bg-white rounded-lg shadow-lg h-full flex flex-col">
+      <!-- Header -->
+      <div class="flex justify-end p-2">
+        <button type="button" class="text-gray-500 hover:text-gray-700" data-modal-hide="default-modal">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Body -->
+      <div class="flex-1 overflow-hidden p-4">
+        <div class="flipbook-container">
+          <div class="_df_book" height="100%" webgl="true" source="/assets/libro/books/catalogo2025.pdf"
+            id="df_manual_book">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Móvil -->
+<div id="default-modal-2" tabindex="-1" aria-hidden="true"
+  class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
+  <div class="relative w-full max-w-5xl h-[90vh]">
+    <div class="relative bg-white rounded-lg shadow-lg h-full flex flex-col">
+      <div class="flex justify-end p-2">
+        <button type="button" class="text-gray-500 hover:text-gray-700" data-modal-hide="default-modal-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 overflow-hidden p-4">
+        <div class="flipbook-container">
+          <div class="_df_book" style="height: 40vh; width: 45vh;" webgl="true" 
+            source="/assets/libro/books/catalogo2025.pdf" id="df_manual_book"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

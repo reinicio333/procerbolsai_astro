@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { asset } from "../utils/paths.js";
+---
+
+<Layout title="Novedades - ProcerbolSai">
+    <main class="h-[100vh] flex justify-center items-center">
+        <div class="flex items-center justify-center h-[90vh] px-8 w-full">
+            <img
+                src={asset("img/novedades/marco_video.webp")}
+                alt="Video 1"
+                class="m-80"
+                style="width: 20%; margin-left: 5%;"
+                
+                loading="lazy"
+            />
+            <img
+                src={asset("img/novedades/marco_video.webp")}
+                alt="Video 1"
+                class="m-80"
+                style="width: 20%; margin-left: 5%;"
+                
+                loading="lazy"
+            />
+        </div>
+    </main>
+</Layout>
