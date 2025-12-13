@@ -4,24 +4,132 @@ import { asset } from "../utils/paths.js";
 ---
 
 <Layout title="Novedades - ProcerbolSai">
-    <main class="h-[100vh] flex justify-center items-center">
-        <div class="flex items-center justify-center h-[90vh] px-8 w-full">
-            <img
-                src={asset("img/novedades/marco_video.webp")}
-                alt="Video 1"
-                class="m-80"
-                style="width: 20%; margin-left: 5%;"
+    <main class="min-h-screen flex justify-center items-center py-20">
+        <div class="flex items-center justify-center gap-28 px-8 w-full">
+            <!-- Video 1 -->
+            <div class="relative w-64 group">
+                <img
+                    src={asset("img/novedades/marco_video.webp")}
+                    alt="Video 1"
+                    class="w-full rounded-xl"
+                    loading="lazy"
+                />
+                <!-- Video insertado -->
+                <video 
+                    id="video1"
+                    class="absolute top-5 left-3 w-[90%] h-auto rounded-xl"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src={asset("img/novedades/pancho1.mp4")} type="video/mp4" />
+                    Tu navegador no soporta el video.
+                </video>
                 
-                loading="lazy"
-            />
-            <img
-                src={asset("img/novedades/marco_video.webp")}
-                alt="Video 1"
-                class="m-80"
-                style="width: 20%; margin-left: 5%;"
+                <!-- Botón Play/Pause -->
+                <button 
+                    id="playPause1"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                    aria-label="Play/Pause"
+                >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path class="play-icon" d="M8 5v14l11-7z"/>
+                        <path class="pause-icon hidden" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                    </svg>
+                </button>
                 
-                loading="lazy"
-            />
+                <img 
+                    class="w-full absolute top-2 left-0 pointer-events-none" 
+                    src={asset("img/novedades/recuadro_video2.webp")}
+                    alt="Overlay superior"
+                />
+                <img 
+                    class="w-full absolute bottom-2 left-0 pointer-events-none" 
+                    src={asset("img/novedades/recuadro_video.webp")}
+                    alt="Overlay inferior"
+                />
+            </div>
+
+            <!-- Video 2 -->
+            <div class="relative w-64 group">
+                <img
+                    src={asset("img/novedades/marco_video.webp")}
+                    alt="Video 2"
+                    class="w-full rounded-xl"
+                    loading="lazy"
+                />
+                <!-- Video insertado -->
+                <video 
+                    id="video2"
+                    class="absolute top-5 left-3 w-[90%] h-auto rounded-xl"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src={asset("img/novedades/pancho2.mp4")} type="video/mp4" />
+                    Tu navegador no soporta el video.
+                </video>
+                
+                <!-- Botón Play/Pause -->
+                <button 
+                    id="playPause2"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                    aria-label="Play/Pause"
+                >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path class="play-icon" d="M8 5v14l11-7z"/>
+                        <path class="pause-icon hidden" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                    </svg>
+                </button>
+                
+                <img 
+                    class="w-full absolute top-2 left-0 pointer-events-none" 
+                    src={asset("img/novedades/recuadro_video2.webp")}
+                    alt="Overlay superior"
+                />
+                <img 
+                    class="w-full absolute bottom-2 left-0 pointer-events-none" 
+                    src={asset("img/novedades/recuadro_video.webp")}
+                    alt="Overlay inferior"
+                />
+            </div>
         </div>
     </main>
 </Layout>
+
+<script>
+    function setupVideoControls(videoId: string, buttonId: string) {
+        const video = document.getElementById(videoId) as HTMLVideoElement;
+        const button = document.getElementById(buttonId) as HTMLButtonElement;
+        const playIcon = button.querySelector('.play-icon') as SVGPathElement;
+        const pauseIcon = button.querySelector('.pause-icon') as SVGPathElement;
+
+        button.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                video.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        });
+
+        // Sincronizar el ícono si el video se pausa/reproduce por otros medios
+        video.addEventListener('play', () => {
+            playIcon.classList.add('hidden');
+            pauseIcon.classList.remove('hidden');
+        });
+
+        video.addEventListener('pause', () => {
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+        });
+    }
+
+    setupVideoControls('video1', 'playPause1');
+    setupVideoControls('video2', 'playPause2');
+</script>
