@@ -16,7 +16,7 @@ const productosDataWithPaths = {
     fondo: asset('img/nuestros_productos/fondo/fondo_chocolatequin.webp'),
     producto: asset('img/nuestros_productos/productos/chocolatequin.webp'),
     relacionados: [
-      { id: 'pipofrut', btn: asset('img/nuestros_productos/botones/btn_pipofrut1.webp') },
+      { id: 'pipofrut', btn: asset('img/nuestros_productos/botones/btn_pipofrut2.webp') },
       { id: 'pipoquin', btn: asset('img/nuestros_productos/botones/btn_pipoquin1.webp') }
     ]
   },
@@ -24,8 +24,8 @@ const productosDataWithPaths = {
     fondo: asset('img/nuestros_productos/fondo/fondo_pipofrut.webp'),
     producto: asset('img/nuestros_productos/productos/pipofrut.webp'),
     relacionados: [
-      { id: 'pipoquin', btn: asset('img/nuestros_productos/botones/btn_pipoquin1.webp') },
-      { id: 'chocolatequin', btn: asset('img/nuestros_productos/botones/btn_chocolatequin1.webp') }
+      { id: 'pipoquin', btn: asset('img/nuestros_productos/botones/btn_pipoquin2.webp') },
+      { id: 'chocolatequin', btn: asset('img/nuestros_productos/botones/btn_chocolatequin2.webp') }
     ]
   },
   fabulosa: {
@@ -109,7 +109,7 @@ const productosDataWithPaths = {
 
             <!-- Grid de productos -->
             <div
-                class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 lg:gap-6"
+                class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-5 gap-4 lg:gap-6"
             >
                 <!-- Producto 1: Pipoquin -->
                 <div
@@ -121,7 +121,7 @@ const productosDataWithPaths = {
                     >
                         <img
                             src={asset(
-                                "img/nuestros_productos/botones/btn_pipoquin1.webp",
+                                "img/nuestros_productos/botones/btn_pipoquin2.webp",
                             )}
                             alt="Pipoquin"
                             class="w-full h-full object-contain drop-shadow-2xl"
@@ -159,7 +159,7 @@ const productosDataWithPaths = {
                     >
                         <img
                             src={asset(
-                                "img/nuestros_productos/botones/btn_pipofrut1.webp",
+                                "img/nuestros_productos/botones/btn_pipofrut2.webp",
                             )}
                             alt="Pipofrut"
                             class="w-full h-full object-contain drop-shadow-2xl"
@@ -397,7 +397,7 @@ const productosDataWithPaths = {
           preloadImage(producto.producto),
         ]);
 
-        const buttonSize = producto.relacionados.length === 1 ? "w-[20%] lg:w-[16%] xl:w-[20%]" : "w-[16%] lg:w-[13%]";
+        const buttonSize = producto.relacionados.length === 1 ? "w-[20%] lg:w-[16%] xl:w-[15%] 2xl:w-[20%]" : "w-[16%] lg:w-[13%] ";
         const botonesHTML = producto.relacionados.map(rel => `
           <img 
             src="${rel.btn}" 
