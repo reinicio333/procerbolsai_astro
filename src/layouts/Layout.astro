@@ -30,43 +30,44 @@ console.log('Current path:', currentPath); // Para debug
 <body>
 
   
-  <div class="flotante fixed bottom-[30px] right-[-590px] z-100  hidden md:block">
+  <div class="flotante fixed bottom-[30px] right-[-590px] z-100 hidden lg:block">
     <a href="#" target="_blank"><img class="w-[11%]" src={asset('img/medios/whatsapp.png')} alt=""></a>
   </div>
 
-  <div class="flotante fixed bottom-[25px] left-[30px] z-100 hidden md:block">
+  <div class="flotante fixed bottom-[25px] left-[30px] z-100 hidden lg:block">
     <a data-modal-target="default-modal" data-modal-toggle="default-modal" class="cursor-pointer">
       <img class="w-[75.78px]" src={asset('img/medios/catalogo.webp')} alt=""></a>
   </div>
 
 
 
-  <nav class="bg-[#009eb9]  fixed w-full z-20 top-0 start-0">
-    <div class="w-full flex flex-wrap items-center justify-between mx-auto p-4">
+  <nav class="bg-[#009eb9] fixed w-full z-20 top-0 start-0">
+    <div class="w-full flex flex-wrap items-center justify-between mx-auto p-3 lg:p-4">
       <a href="index.html"
         class="flex items-center space-x-3 rtl:space-x-reverse animate__animated animate__bounceInLeft">
-        <img src={asset('img/inicio/logo.webp')} class="w-20 lg:w-28 xl:w-42 " alt="Logo ProcerbolSai">
+        <img src={asset('img/inicio/logo.webp')} class="w-16 lg:w-20 xl:w-28 2xl:w-42" alt="Logo ProcerbolSai">
       </a>
 
-      <div class="flex lg:order-2 xl:order-2 space-x-3 lg:space-x-0  animate__animated animate__bounceInRight ">
+      <div class="flex lg:order-2 xl:order-2 space-x-2 lg:space-x-0 animate__animated animate__bounceInRight">
         <a href="#" target="_blank" class="flotante">
-          <img src={asset('img/inicio/ICONOS-01.webp')} class="w-20 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo Facebook">
+          <img src={asset('img/inicio/ICONOS-01.webp')} class="w-8 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo Facebook">
         </a>
         <a href="#" target="_blank" class="flotante">
-          <img src={asset('img/inicio/ICONOS-02.webp')} class="w-20 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo Whatsapp">
+          <img src={asset('img/inicio/ICONOS-02.webp')} class="w-8 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo Whatsapp">
         </a>
         <a href="#" target="_blank" class="flotante">
-          <img src={asset('img/inicio/tiktok.webp')} class="w-20 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo TikTok">
+          <img src={asset('img/inicio/tiktok.webp')} class="w-8 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo TikTok">
         </a>
         <a href="#" target="_blank" class="flotante">
-          <img src={asset('img/inicio/instagram.webp')} class="w-20 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo TikTok">
+          <img src={asset('img/inicio/instagram.webp')} class="w-8 lg:w-10 xl:w-14 lg:ml-4 hidden lg:block" alt="Logo Instagram">
         </a>
-        <div class="md:hidden">
-          <a data-modal-target="default-modal-2" data-modal-toggle="default-modal-2" class="cursor-pointer"><img class="w-15" src={asset('img/medios/catalogo.webp')} alt="">
+        <div class="lg:hidden">
+          <a data-modal-target="default-modal-2" data-modal-toggle="default-modal-2" class="cursor-pointer">
+            <img class="w-12" src={asset('img/medios/catalogo.webp')} alt="Catálogo">
           </a>
         </div>
         <button data-collapse-toggle="navbar-sticky" type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -75,35 +76,35 @@ console.log('Current path:', currentPath); // Para debug
           </svg>
         </button>
       </div>
-      <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1 " id="navbar-sticky">
+      <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
         <ul
-          class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg lg:space-x-4 xl:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 bg-[#009eb9] ">
+          class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg lg:space-x-2 xl:space-x-4 2xl:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 bg-[#009eb9]">
           <li>
             <a href={asset('/')}
-              class={`block py-2 px-0 text-sm lg:text-xs xl:text-xl rounded-sm lg:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath === '/procerbolsai/' || currentPath === '/procerbolsai' ? 'text-[#001789]' : 'text-white'}`}
+              class={`block py-2 px-0 text-base lg:text-xs xl:text-base 2xl:text-xl rounded-sm lg:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath === '/procerbolsai/' || currentPath === '/procerbolsai' ? 'text-[#001789]' : 'text-white'}`}
               aria-current="page">INICIO</a>
           </li>
           
           <li>
             <a href={asset('/nosotros')}
-              class={`block py-2 px-0 text-sm lg:text-xs xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/nosotros') ? 'text-[#001789]' : 'text-white'}`}>NOSOTROS</a>
+              class={`block py-2 px-0 text-base lg:text-xs xl:text-base 2xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/nosotros') ? 'text-[#001789]' : 'text-white'}`}>NOSOTROS</a>
           </li>
           <li>
             <a href={asset('/nuestros_productos')}
-              class={`block py-2 px-0 text-sm lg:text-xs xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/nuestros_productos') ? 'text-[#001789]' : 'text-white'}`}>NUESTROS PRODUCTOS</a>
+              class={`block py-2 px-0 text-base lg:text-xs xl:text-base 2xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/nuestros_productos') ? 'text-[#001789]' : 'text-white'}`}>NUESTROS PRODUCTOS</a>
           </li>
           
           
          
           <li>
             <a href={asset('/novedades')}
-              class={`block py-2 px-0 text-sm lg:text-xs xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/novedades') ? 'text-[#001789]' : 'text-white'}`}>NOVEDADES</a>
+              class={`block py-2 px-0 text-base lg:text-xs xl:text-base 2xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/novedades') ? 'text-[#001789]' : 'text-white'}`}>NOVEDADES</a>
           </li>
          
           
           <li>
             <a href={asset('/contactos')}
-              class={`block py-2 px-0 text-sm lg:text-xs xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/contactos') ? 'text-[#001789]' : 'text-white'}`}>CONTÁCTANOS</a>
+              class={`block py-2 px-0 text-base lg:text-xs xl:text-base 2xl:text-xl rounded-sm hover:bg-[#3d7e34] lg:hover:bg-transparent lg:p-0 hover:text-[#001789] ${currentPath.includes('/contactos') ? 'text-[#001789]' : 'text-white'}`}>CONTÁCTANOS</a>
           </li>
         </ul>
       </div>
@@ -114,31 +115,31 @@ console.log('Current path:', currentPath); // Para debug
 
 
 <!-- Footer -->
-<footer class="bg-[#009eb9] ">
+<footer class="bg-[#009eb9]">
   <div class="flex relative z-10">
     <img src={asset('img/inicio/contactate_footer.webp')} class="w-[37%]" alt="Footer Image">
-    <div class="relative w-[15.2%] ">
+    <div class="relative w-[15.2%]">
       <img src={asset('img/inicio/fondo_facebook.webp')} class="w-full" alt="Footer Image">
       <a href="#" target="_blank" class="absolute top-[48%] left-[49%] -translate-x-1/2 -translate-y-1/2 w-[75%] flotante">
-        <img src={asset('img/inicio/ICONOS-01.webp')} class="w-full " alt="Footer Image">
+        <img src={asset('img/inicio/ICONOS-01.webp')} class="w-full" alt="Facebook">
       </a>
     </div>
     <div class="relative w-[15.6%]">
       <img src={asset('img/inicio/fondo_tiktok.webp')} class="w-full" alt="Footer Image">
       <a href="#" target="_blank" class="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] flotante">
-        <img src={asset('img/inicio/tiktok.webp')} class="w-full" alt="Footer Image">
+        <img src={asset('img/inicio/tiktok.webp')} class="w-full" alt="TikTok">
       </a>
     </div>
     <div class="relative w-[15.6%]">
       <img src={asset('img/inicio/fondo_tiktok.webp')} class="w-full" alt="Footer Image">
       <a href="#" target="_blank" class="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] flotante">
-        <img src={asset('img/inicio/instagram.webp')} class="w-full" alt="Footer Image">
+        <img src={asset('img/inicio/instagram.webp')} class="w-full" alt="Instagram">
       </a>
     </div>
     <div class="relative w-[18.9%]">
       <img src={asset('img/inicio/fondo_whatsapp.webp')} class="w-full" alt="Footer Image">
       <a href="#" target="_blank" class="absolute top-[48%] left-[41.5%] -translate-x-1/2 -translate-y-1/2 w-[63%] flotante">
-        <img src={asset('img/inicio/ICONOS-02.webp')} class="w-full" alt="Footer Image">
+        <img src={asset('img/inicio/ICONOS-02.webp')} class="w-full" alt="WhatsApp">
       </a>
     </div>
   </div>
@@ -151,7 +152,7 @@ console.log('Current path:', currentPath); // Para debug
     class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
     <div class="relative w-full max-w-5xl h-[90vh]">
       <!-- Modal content -->
-      <div class="relative bg-white rounded-lg shadow-lg  flex flex-col">
+      <div class="relative bg-white rounded-lg shadow-lg flex flex-col">
         <!-- Modal header -->
         <div class="flex justify-end p-2">
           <button type="button" class="text-gray-500 hover:text-gray-700" data-modal-hide="default-modal">
@@ -172,9 +173,9 @@ console.log('Current path:', currentPath); // Para debug
   </div>
   <!-- Modal Movil -->
   <div id="default-modal-2" tabindex="-1" aria-hidden="true"
-    class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
-    <div class="relative w-full max-w-5xl h-[90vh]">
-      <div class="relative bg-white rounded-lg shadow-lg h-full flex flex-col">
+    class="hidden fixed inset-0 z-50 bg-gray-900/50 flex items-center justify-center p-4">
+    <div class="relative w-full max-w-md" style="height: 60vh; max-height: 600px;">
+      <div class="relative bg-white rounded-lg shadow-lg w-full h-full flex flex-col">
         <div class="flex justify-end p-2">
           <button type="button" class="text-gray-500 hover:text-gray-700" data-modal-hide="default-modal-2">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,9 +183,9 @@ console.log('Current path:', currentPath); // Para debug
             </svg>
           </button>
         </div>
-        <div class="flex-1 overflow-hidden p-4">
-          <div class="flipbook-container">
-            <div class="_df_book" style="height: 40vh; width: 45vh;" webgl="true" source={asset('libro/books/catalogo2025.pdf')} id="df_manual_book_mobile" is:raw>
+        <div class="flex-1 overflow-hidden px-2 pb-2">
+          <div id="flipbook-mobile-container" class="w-full h-full">
+            <!-- El flipbook se insertará aquí dinámicamente -->
           </div>
         </div>
       </div>
@@ -212,6 +213,50 @@ console.log('Current path:', currentPath); // Para debug
 
   document.addEventListener('DOMContentLoaded', adjustContentPadding);
   window.addEventListener('resize', adjustContentPadding);
+
+  // Inicializar flipbook móvil solo cuando se abre el modal
+  document.addEventListener('DOMContentLoaded', function() {
+    let flipbookMobileInitialized = false;
+    const modalMobile = document.getElementById('default-modal-2');
+    const container = document.getElementById('flipbook-mobile-container');
+    
+    if (modalMobile && container) {
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.attributeName === 'class') {
+            const isVisible = !modalMobile.classList.contains('hidden');
+            
+            if (isVisible && !flipbookMobileInitialized) {
+              setTimeout(function() {
+                // Obtener dimensiones reales del contenedor
+                const containerWidth = container.offsetWidth;
+                const containerHeight = container.offsetHeight;
+                
+                // Crear el elemento del flipbook
+                container.innerHTML = `
+                  <div class="_df_book" 
+                       style="width: ${containerWidth}px; height: ${containerHeight}px;" 
+                       webgl="true" 
+                       source="${window.location.origin}/procerbolsai/libro/books/catalogo2025.pdf" 
+                       id="df_manual_book_mobile">
+                  </div>
+                `;
+                
+                // Inicializar el flipbook
+                if (typeof window.DFLIP !== 'undefined') {
+                  window.DFLIP.parseBooks();
+                }
+                
+                flipbookMobileInitialized = true;
+              }, 150);
+            }
+          }
+        });
+      });
+      
+      observer.observe(modalMobile, { attributes: true });
+    }
+  });
 </script>
   <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>

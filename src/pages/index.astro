@@ -125,16 +125,16 @@ const marcas = [
   <!-- Contenedor del carrusel con fade en los extremos - Ancho 60% centrado -->
   <div class="relative max-w-[70%] mx-auto overflow-hidden">
     <!-- Gradiente izquierdo -->
-    <div class="absolute left-0 top-0 bottom-0 w-24 md:w-32 lg:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute left-0 top-0 bottom-0 w-24 lg:w-32 xl:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
     
     <!-- Gradiente derecho -->
-    <div class="absolute right-0 top-0 bottom-0 w-24 md:w-32 lg:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-24 lg:w-32 xl:w-40 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
 
     <!-- Track del carrusel -->
-    <div class="carousel-track flex gap-8 md:gap-12 lg:gap-16">
+    <div class="carousel-track flex gap-8 lg:gap-12 xl:gap-16">
       <!-- Triplicamos las imágenes para un scroll verdaderamente infinito -->
       {[...marcas, ...marcas, ...marcas].map((marca) => (
-        <div class="carousel-item flex-shrink-0 w-32 md:w-40 lg:w-48 transition-all duration-300">
+        <div class="carousel-item flex-shrink-0 w-25 lg:w-40 xl:w-48 transition-all duration-300">
           <img
             src={marca.src}
             alt={marca.alt}
@@ -159,7 +159,7 @@ const marcas = [
 
     const items = track.querySelectorAll('.carousel-item');
     const itemWidth = items[0].offsetWidth;
-    const gap = 48; // lg:gap-16 = 4rem = 64px, ajusta según tu gap
+    const gap = 48; // xl:gap-16 = 4rem = 64px, ajusta según tu gap
     const totalWidth = (itemWidth + gap) * items.length / 3;
     
     let position = 0;
