@@ -1,0 +1,172 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { asset } from "../utils/paths.js";
+---
+
+<Layout title="Nosotros - ProcerbolSai">
+    <main class="">
+        <img
+            src={asset("img/nosotros/titulo.webp")}
+            class="w-full fade-in-element"
+            alt="Portas ProcerbolSai"
+        />
+        <div class="relative">
+            <img
+                src={asset("img/nosotros/fondo.webp")}
+                class="w-full"
+                alt="Portas ProcerbolSai"
+            />
+
+            <!-- Ruedas decorativas -->
+            <img
+                src={asset("img/nosotros/rueda1.webp")}
+                class="absolute top-2 right-0 fade-in-element"
+                style="width: 10%; height: auto; z-index: 5;"
+                alt="Circulos"
+            />
+            <img
+                src={asset("img/nosotros/rueda2.webp")}
+                class="absolute top-0 right-0 fade-in-element"
+                style="width: 13.8%; height: auto; z-index: 4;"
+                alt="Circulos"
+            />
+            <img
+                src={asset("img/nosotros/rueda3.webp")}
+                class="absolute bottom-0 right-0 fade-in-element"
+                style="width: 39.4%; height: auto; z-index: 3;"
+                alt="Circulos"
+            />
+
+            <!-- Contenido de texto -->
+            <div
+                class="absolute top-0 left-0 w-full h-full flex items-center p-8 md:p-12 lg:p-16"
+            >
+                <div class="w-full h-full relative">
+                    <!-- Texto de historia -->
+                    <div class="slide-in-left-element">
+                         <img
+                                src={asset("img/nosotros/fondo_texto.webp")}
+                                class="absolute top-0 left-0 w-full h-full"
+                                style="width: 100%; height: auto; z-index: 2;"
+                                alt="Circulos"
+                            />
+                    </div>
+
+                    <!-- Tarjetas de Misión y Visión -->
+                    <div class="absolute left-0 flex" style="bottom: 3%; left:12%; gap: 0.5rem;">
+                        <!-- Tarjeta Misión -->
+                            <img
+                                src={asset("img/nosotros/mision.webp")}
+                                class="slide-up-element"
+                                style="width: 24%; height: auto; position: relative; z-index: 6;"
+                                alt="Mision"
+                                data-delay="200"
+                            />
+
+                        <!-- Tarjeta Visión -->
+                            <img
+                                src={asset("img/nosotros/vision.webp")}
+                                class="slide-up-element"
+                                style="width: 24%; height: auto; position: relative; z-index: 6;"
+                                alt="Vision"
+                                data-delay="400"
+                            />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    /* Animaciones base */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Estados iniciales - elementos ocultos */
+    .fade-in-element,
+    .slide-in-left-element,
+    .slide-up-element {
+        opacity: 0;
+    }
+
+    /* Clases activas cuando son visibles */
+    .fade-in-element.visible {
+        animation: fadeIn 1s ease-in forwards;
+    }
+
+    .slide-in-left-element.visible {
+        animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    .slide-up-element.visible {
+        animation: slideUp 0.6s ease-out forwards;
+    }
+</style>
+
+<script>
+    // Intersection Observer para detectar cuando los elementos son visibles
+    const observerOptions = {
+        threshold: 0.1, // El elemento debe estar visible al menos un 10%
+        rootMargin: '0px 0px -50px 0px' // Empieza la animación un poco antes de que sea completamente visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Obtener el delay si existe
+                const delay = entry.target.getAttribute('data-delay');
+                
+                if (delay) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, parseInt(delay));
+                } else {
+                    entry.target.classList.add('visible');
+                }
+                
+                // Dejar de observar después de animar (opcional)
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observar todos los elementos con animación
+    document.addEventListener('DOMContentLoaded', () => {
+        const elementsToAnimate = document.querySelectorAll(
+            '.fade-in-element, .slide-in-left-element, .slide-up-element'
+        );
+        
+        elementsToAnimate.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
