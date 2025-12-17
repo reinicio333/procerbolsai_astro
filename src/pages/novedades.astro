@@ -4,20 +4,20 @@ import { asset } from "../utils/paths.js";
 ---
 
 <Layout title="Novedades - ProcerbolSai">
-    <main class="min-h-screen flex justify-center items-center py-10 lg:py-20">
-        <div class="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-28 px-4 lg:px-8 w-full">
+    <main class="min-h-screen flex justify-center items-center py-8 lg:py-6">
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-22 px-4 lg:px-8 w-full">
             <!-- Video 1 -->
-            <div class="relative w-64 lg:w-64 group">
+            <div class="relative h-[70vh] lg:h-[80vh] w-auto group">
                 <img
                     src={asset("img/novedades/marco_video.webp")}
                     alt="Video 1"
-                    class="w-full rounded-xl"
+                    class="h-full w-auto rounded-xl"
                     loading="lazy"
                 />
                 <!-- Video insertado -->
                 <video 
                     id="video1"
-                    class="absolute top-5 left-3 w-[90%] h-auto rounded-xl"
+                    class="absolute top-5 left-[5%] w-[90%] h-[calc(100%-2.5rem)] object-cover rounded-xl"
                     autoplay
                     muted
                     loop
@@ -30,10 +30,10 @@ import { asset } from "../utils/paths.js";
                 <!-- Botón Play/Pause -->
                 <button 
                     id="playPause1"
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-14 h-14 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
                     aria-label="Play/Pause"
                 >
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                         <path class="play-icon" d="M8 5v14l11-7z"/>
                         <path class="pause-icon hidden" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
                     </svg>
@@ -52,17 +52,17 @@ import { asset } from "../utils/paths.js";
             </div>
 
             <!-- Video 2 -->
-            <div class="relative w-64 lg:w-64 group">
+            <div class="relative h-[70vh] lg:h-[80vh] w-auto group">
                 <img
                     src={asset("img/novedades/marco_video.webp")}
                     alt="Video 2"
-                    class="w-full rounded-xl"
+                    class="h-full w-auto rounded-xl"
                     loading="lazy"
                 />
                 <!-- Video insertado -->
                 <video 
                     id="video2"
-                    class="absolute top-5 left-3 w-[90%] h-auto rounded-xl"
+                    class="absolute top-5 left-[5%] w-[90%] h-[calc(100%-2.5rem)] object-cover rounded-xl"
                     autoplay
                     muted
                     loop
@@ -75,10 +75,55 @@ import { asset } from "../utils/paths.js";
                 <!-- Botón Play/Pause -->
                 <button 
                     id="playPause2"
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-14 h-14 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
                     aria-label="Play/Pause"
                 >
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path class="play-icon" d="M8 5v14l11-7z"/>
+                        <path class="pause-icon hidden" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                    </svg>
+                </button>
+                
+                <img 
+                    class="w-full absolute top-2 left-0 pointer-events-none" 
+                    src={asset("img/novedades/recuadro_video2.webp")}
+                    alt="Overlay superior"
+                />
+                <img 
+                    class="w-full absolute bottom-2 left-0 pointer-events-none" 
+                    src={asset("img/novedades/recuadro_video.webp")}
+                    alt="Overlay inferior"
+                />
+            </div>
+
+            <!-- Video 3 -->
+            <div class="relative h-[70vh] lg:h-[80vh] w-auto group">
+                <img
+                    src={asset("img/novedades/marco_video.webp")}
+                    alt="Video 3"
+                    class="h-full w-auto rounded-xl"
+                    loading="lazy"
+                />
+                <!-- Video insertado -->
+                <video 
+                    id="video3"
+                    class="absolute top-5 left-[5%] w-[90%] h-[calc(100%-2.5rem)] object-cover rounded-xl"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src={asset("img/novedades/video3.mp4")} type="video/mp4" />
+                    Tu navegador no soporta el video.
+                </video>
+                
+                <!-- Botón Play/Pause -->
+                <button 
+                    id="playPause3"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-14 h-14 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                    aria-label="Play/Pause"
+                >
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                         <path class="play-icon" d="M8 5v14l11-7z"/>
                         <path class="pause-icon hidden" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
                     </svg>
@@ -132,4 +177,5 @@ import { asset } from "../utils/paths.js";
 
     setupVideoControls('video1', 'playPause1');
     setupVideoControls('video2', 'playPause2');
+    setupVideoControls('video3', 'playPause3');
 </script>
