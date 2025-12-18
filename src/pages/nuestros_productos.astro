@@ -1,412 +1,521 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { asset } from '../utils/paths.js';
+import Layout from "../layouts/Layout.astro";
+import { asset } from "../utils/paths.js";
 
 // Generar rutas de productos
 const productosDataWithPaths = {
   pipoquin: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_pipoquin.webp'),
-    producto: asset('img/nuestros_productos/productos/pipoquin.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_pipoquin.webp"),
+    producto: asset("img/nuestros_productos/productos/pipoquin.webp"),
     relacionados: [
-      { id: 'chocolatequin', btn: asset('img/nuestros_productos/botones/btn_chocolatequin1.webp') },
-      { id: 'pipofrut', btn: asset('img/nuestros_productos/botones/btn_pipofrut1.webp') }
-    ]
+      {
+        id: "chocolatequin",
+        btn: asset("img/nuestros_productos/botones/btn_chocolatequin1.webp"),
+      },
+      {
+        id: "pipofrut",
+        btn: asset("img/nuestros_productos/botones/btn_pipofrut1.webp"),
+      },
+    ],
   },
   chocolatequin: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_chocolatequin.webp'),
-    producto: asset('img/nuestros_productos/productos/chocolatequin.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_chocolatequin.webp"),
+    producto: asset("img/nuestros_productos/productos/chocolatequin.webp"),
     relacionados: [
-      { id: 'pipofrut', btn: asset('img/nuestros_productos/botones/btn_pipofrut2.webp') },
-      { id: 'pipoquin', btn: asset('img/nuestros_productos/botones/btn_pipoquin1.webp') }
-    ]
+      {
+        id: "pipofrut",
+        btn: asset("img/nuestros_productos/botones/btn_pipofrut2.webp"),
+      },
+      {
+        id: "pipoquin",
+        btn: asset("img/nuestros_productos/botones/btn_pipoquin1.webp"),
+      },
+    ],
   },
   pipofrut: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_pipofrut.webp'),
-    producto: asset('img/nuestros_productos/productos/pipofrut.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_pipofrut.webp"),
+    producto: asset("img/nuestros_productos/productos/pipofrut.webp"),
     relacionados: [
-      { id: 'pipoquin', btn: asset('img/nuestros_productos/botones/btn_pipoquin2.webp') },
-      { id: 'chocolatequin', btn: asset('img/nuestros_productos/botones/btn_chocolatequin2.webp') }
-    ]
+      {
+        id: "pipoquin",
+        btn: asset("img/nuestros_productos/botones/btn_pipoquin2.webp"),
+      },
+      {
+        id: "chocolatequin",
+        btn: asset("img/nuestros_productos/botones/btn_chocolatequin2.webp"),
+      },
+    ],
   },
   fabulosa: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_fabulosa.webp'),
-    producto: asset('img/nuestros_productos/productos/fabulosa.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_fabulosa.webp"),
+    producto: asset("img/nuestros_productos/productos/fabulosa.webp"),
     relacionados: [
-      { id: 'merlyn', btn: asset('img/nuestros_productos/botones/btn_merlyn.webp') }
-    ]
+      {
+        id: "merlyn",
+        btn: asset("img/nuestros_productos/botones/btn_merlyn.webp"),
+      },
+    ],
   },
   merlyn: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_merlyn.webp'),
-    producto: asset('img/nuestros_productos/productos/merlyn.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_merlyn.webp"),
+    producto: asset("img/nuestros_productos/productos/merlyn.webp"),
     relacionados: [
-      { id: 'fabulosa', btn: asset('img/nuestros_productos/botones/btn_fabulosa.webp') }
-    ]
+      {
+        id: "fabulosa",
+        btn: asset("img/nuestros_productos/botones/btn_fabulosa.webp"),
+      },
+    ],
   },
   frutiquin_frutilla: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_frutiquin_frutilla.webp'),
-    producto: asset('img/nuestros_productos/productos/frutiquin_frutilla.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_frutiquin_frutilla.webp"),
+    producto: asset("img/nuestros_productos/productos/frutiquin_frutilla.webp"),
     relacionados: [
-      { id: 'frutiquin_banana', btn: asset('img/nuestros_productos/botones/btn_frutiquin_banana.webp') }
-    ]
+      {
+        id: "frutiquin_banana",
+        btn: asset("img/nuestros_productos/botones/btn_frutiquin_banana.webp"),
+      },
+    ],
   },
   frutiquin_banana: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_frutiquin_banana.webp'),
-    producto: asset('img/nuestros_productos/productos/frutiquin_banana.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_frutiquin_banana.webp"),
+    producto: asset("img/nuestros_productos/productos/frutiquin_banana.webp"),
     relacionados: [
-      { id: 'frutiquin_frutilla', btn: asset('img/nuestros_productos/botones/btn_frutiquin_frutilla.webp') }
-    ]
+      {
+        id: "frutiquin_frutilla",
+        btn: asset(
+          "img/nuestros_productos/botones/btn_frutiquin_frutilla.webp",
+        ),
+      },
+    ],
   },
   nachosquin: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_nachosquin.webp'),
-    producto: asset('img/nuestros_productos/productos/nachosquin.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_nachosquin.webp"),
+    producto: asset("img/nuestros_productos/productos/nachosquin.webp"),
     relacionados: [
-      { id: 'nachosquin_picante', btn: asset('img/nuestros_productos/botones/btn_nachosquin_picante.webp') }
-    ]
+      {
+        id: "nachosquin_picante",
+        btn: asset(
+          "img/nuestros_productos/botones/btn_nachosquin_picante.webp",
+        ),
+      },
+    ],
   },
   nachosquin_picante: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_nachosquin_picante.webp'),
-    producto: asset('img/nuestros_productos/productos/nachosquin_picante.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_nachosquin_picante.webp"),
+    producto: asset("img/nuestros_productos/productos/nachosquin_picante.webp"),
     relacionados: [
-      { id: 'nachosquin', btn: asset('img/nuestros_productos/botones/btn_nachoquin.webp') }
-    ]
+      {
+        id: "nachosquin",
+        btn: asset("img/nuestros_productos/botones/btn_nachoquin.webp"),
+      },
+    ],
   },
   papasquin: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_papasquin.webp'),
-    producto: asset('img/nuestros_productos/productos/papasquin.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_papasquin.webp"),
+    producto: asset("img/nuestros_productos/productos/papasquin.webp"),
     relacionados: [
-      { id: 'papasquin_picante', btn: asset('img/nuestros_productos/botones/btn_papasquin_picantes.webp') }
-    ]
+      {
+        id: "papasquin_picante",
+        btn: asset(
+          "img/nuestros_productos/botones/btn_papasquin_picantes.webp",
+        ),
+      },
+    ],
   },
   papasquin_picante: {
-    fondo: asset('img/nuestros_productos/fondo/fondo_papasquin_picante.webp'),
-    producto: asset('img/nuestros_productos/productos/papasquin_picante.webp'),
+    fondo: asset("img/nuestros_productos/fondo/fondo_papasquin_picante.webp"),
+    producto: asset("img/nuestros_productos/productos/papasquin_picante.webp"),
     relacionados: [
-      { id: 'papasquin', btn: asset('img/nuestros_productos/botones/btn_papasquin.webp') }
-    ]
-  }
+      {
+        id: "papasquin",
+        btn: asset("img/nuestros_productos/botones/btn_papasquin.webp"),
+      },
+    ],
+  },
+  quesos: {
+    fondo: asset("img/nuestros_productos/fondo/fondo_quesos.webp"),
+    producto: asset("img/nuestros_productos/productos/quesos.webp"),
+    relacionados: [
+      {
+        id: "quesos_picante",
+        btn: asset("img/nuestros_productos/botones/btn_quesos_picantes.webp"),
+      },
+    ],
+  },
+  quesos_picante: {
+    fondo: asset("img/nuestros_productos/fondo/fondo_quesos_picante.webp"),
+    producto: asset("img/nuestros_productos/productos/quesos_picante.webp"),
+    relacionados: [
+      {
+        id: "quesos",
+        btn: asset("img/nuestros_productos/botones/btn_quesos.webp"),
+      },
+    ],
+  },
 };
 ---
 
 <Layout title="Nuestros Productos - ProcerbolSai">
-    <main
-        class="pt-20 lg:pt-32 pb-8 lg:pb-16 px-4 bg-white min-h-screen"
-    >
-        <div class="max-w-7xl mx-auto">
-            <!-- Título -->
-            <div id="hero-title" class="text-center mb-6 lg:mb-8 mt-4 lg:mt-8">
-                <h1 class="text-3xl lg:text-5xl xl:text-6xl font-bold text-[#009eb9] mb-3 lg:mb-4">
-                    Nuestros Productos
-                </h1>
-                <div
-                    id="hero-line"
-                    class="w-24 lg:w-32 h-1 bg-gradient-to-r from-[#009eb9] to-[#00d4ff] mx-auto rounded-full"
-                >
-                </div>
-                <p id="hero-subtitle" class="text-gray-600 mt-4 lg:mt-6 text-base lg:text-lg">
-                    Descubre nuestra deliciosa variedad de snacks
-                </p>
-            </div>
-
-            <!-- Grid de productos -->
-            <div
-                class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-5 gap-4 lg:gap-6"
-            >
-                <!-- Producto 1: Pipoquin -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="pipoquin"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_pipoquin2.webp",
-                            )}
-                            alt="Pipoquin"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 2: Chocolate Quin -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="chocolatequin"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_chocolatequin1.webp",
-                            )}
-                            alt="Chocolate Quin"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 3: Pipofrut -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="pipofrut"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_pipofrut2.webp",
-                            )}
-                            alt="Pipofrut"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 4: Fabulosa -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="fabulosa"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_fabulosa.webp",
-                            )}
-                            alt="Fabulosa"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 5: Merlyn -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="merlyn"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_merlyn.webp",
-                            )}
-                            alt="Merlyn"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 6: Frutiquin Frutilla -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="frutiquin_frutilla"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_frutiquin_frutilla.webp",
-                            )}
-                            alt="Frutiquin Frutilla"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 7: Frutiquin Banana -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="frutiquin_banana"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_frutiquin_banana.webp",
-                            )}
-                            alt="Frutiquin Banana"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 8: Nachosquin -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="nachosquin"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_nachoquin.webp",
-                            )}
-                            alt="Nachosquin"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 9: Nachosquin Picante -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="nachosquin_picante"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_nachosquin_picante.webp",
-                            )}
-                            alt="Nachosquin Picante"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 10: Papasquin -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="papasquin"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_papasquin.webp",
-                            )}
-                            alt="Papasquin"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-
-                <!-- Producto 11: Papasquin Picante -->
-                <div
-                    class="product-card cursor-pointer will-change-transform"
-                    data-product="papasquin_picante"
-                >
-                    <div
-                        class="bg-white rounded-2xl lg:rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-                    >
-                        <img
-                            src={asset(
-                                "img/nuestros_productos/botones/btn_papasquin_picantes.webp",
-                            )}
-                            alt="Papasquin Picante"
-                            class="w-full h-full object-contain drop-shadow-2xl"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Modal con tamaño optimizado -->
-    <div
-        id="product-modal"
-        class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-2 lg:p-4"
-    >
-        <div
-            id="modal-content"
-            class="relative w-full max-w-8xl h-[90vh] lg:h-[95vh] overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl"
+  <main class="pt-20 lg:pt-32 pb-8 lg:pb-16 px-4 min-h-screen">
+    <div class="max-w-7xl mx-auto">
+      <!-- Título -->
+      <div id="hero-title" class="text-center mb-6 lg:mb-8 mt-4 lg:mt-8">
+        <h1
+          class="text-3xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 lg:mb-4"
         >
-            <!-- Contenido dinámico del modal -->
+          Nuestros Productos
+        </h1>
+        <div
+          id="hero-line"
+          class="w-24 lg:w-32 h-1 bg-gradient-to-r from-[#15eded] to-[#0b36c2] mx-auto rounded-full"
+        >
         </div>
+        <p
+          id="hero-subtitle"
+          class="text-white mt-4 lg:mt-6 text-base lg:text-lg"
+        >
+          Descubre nuestra deliciosa variedad de snacks
+        </p>
+      </div>
+
+      <!-- Grid de productos -->
+      <div
+        class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-5 gap-4 lg:gap-6"
+      >
+        <!-- Producto 1: Pipoquin -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="pipoquin"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/pipoquin.webp")}
+              alt="Pipoquin"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 2: Chocolate Quin -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="chocolatequin"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/chocolatequin.webp")}
+              alt="Chocolate Quin"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 3: Pipofrut -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="pipofrut"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/pipofrut.webp")}
+              alt="Pipofrut"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 4: Fabulosa -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="fabulosa"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/fabulosa.webp")}
+              alt="Fabulosa"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 5: Merlyn -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="merlyn"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/merlyn.webp")}
+              alt="Merlyn"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 6: Frutiquin Frutilla -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="frutiquin_frutilla"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset(
+                "img/nuestros_productos/botones/frutiquin_frutilla.webp",
+              )}
+              alt="Frutiquin Frutilla"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 7: Frutiquin Banana -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="frutiquin_banana"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset(
+                "img/nuestros_productos/botones/frutiquin_banana.webp",
+              )}
+              alt="Frutiquin Banana"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 8: Nachosquin -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="nachosquin"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/nachosquin.webp")}
+              alt="Nachosquin"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 9: Nachosquin Picante -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="nachosquin_picante"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset(
+                "img/nuestros_productos/botones/nachosquin_picante.webp",
+              )}
+              alt="Nachosquin Picante"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 10: Papasquin -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="papasquin"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/papasquin.webp")}
+              alt="Papasquin"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Producto 11: Papasquin Picante -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="papasquin_picante"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset(
+                "img/nuestros_productos/botones/papasquin_picante.webp",
+              )}
+              alt="Papasquin Picante"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- Producto 12: Quesos -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="quesos"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/quesos.webp")}
+              alt="Quesos"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- Producto 13: Quesos Picante -->
+        <div
+          class="product-card cursor-pointer will-change-transform"
+          data-product="quesos_picante"
+        >
+          <div
+            class="rounded-2xl lg:rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            style="box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(255, 255, 255, 0.2), 0 -5px 20px rgba(255, 255, 255, 0.1);"
+          >
+            <img
+              src={asset("img/nuestros_productos/botones/quesos_picante.webp")}
+              alt="Quesos Picante"
+              class="w-full h-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-<!-- Script 1: Solo para imports de GSAP -->
-<script>
-  import gsap from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  
-  // Registrar ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // Hacer gsap disponible globalmente
-  window.gsap = gsap;
-  window.ScrollTrigger = ScrollTrigger;
-  
-  // Disparar evento cuando gsap esté listo
-  window.dispatchEvent(new Event('gsap-loaded'));
-</script>
+  </main>
 
-<!-- Script 2: Lógica con datos del servidor -->
-<script define:vars={{ productosData: productosDataWithPaths }}>
-  // Esperar a que gsap esté disponible
-  function initAnimations() {
-    const gsap = window.gsap;
-    const ScrollTrigger = window.ScrollTrigger;
+  <!-- Modal con tamaño optimizado -->
+  <div
+    id="product-modal"
+    class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-2 lg:p-4"
+  >
+    <div
+      id="modal-content"
+      class="relative w-full max-w-8xl h-[90vh] lg:h-[95vh] overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl"
+    >
+      <!-- Contenido dinámico del modal -->
+    </div>
+  </div>
+  <!-- Script 1: Solo para imports de GSAP -->
+  <script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    // Variable para evitar clicks múltiples
-    let isAnimating = false;
-    let floatAnimation = null;
+    // Registrar ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Pre-cargar imágenes
-    function preloadImage(url) {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(img);
-        img.onerror = reject;
-        img.src = url;
-      });
-    }
+    // Hacer gsap disponible globalmente
+    window.gsap = gsap;
+    window.ScrollTrigger = ScrollTrigger;
 
-    // Función para abrir modal con preload
-    async function openModal(productKey) {
-      if (isAnimating) return;
+    // Disparar evento cuando gsap esté listo
+    window.dispatchEvent(new Event("gsap-loaded"));
+  </script>
 
-      const producto = productosData[productKey];
-      if (!producto) return;
+  <!-- Script 2: Lógica con datos del servidor -->
+  <script define:vars={{ productosData: productosDataWithPaths }}>
+    // Esperar a que gsap esté disponible
+    function initAnimations() {
+      const gsap = window.gsap;
+      const ScrollTrigger = window.ScrollTrigger;
 
-      isAnimating = true;
+      // Variable para evitar clicks múltiples
+      let isAnimating = false;
+      let floatAnimation = null;
 
-      const modal = document.getElementById("product-modal");
-      const modalContent = document.getElementById("modal-content");
+      // Pre-cargar imágenes
+      function preloadImage(url) {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve(img);
+          img.onerror = reject;
+          img.src = url;
+        });
+      }
 
-      modal.classList.remove("hidden");
-      modalContent.innerHTML = `
+      // Función para abrir modal con preload
+      async function openModal(productKey) {
+        if (isAnimating) return;
+
+        const producto = productosData[productKey];
+        if (!producto) return;
+
+        isAnimating = true;
+
+        const modal = document.getElementById("product-modal");
+        const modalContent = document.getElementById("modal-content");
+
+        modal.classList.remove("hidden");
+        modalContent.innerHTML = `
         <div class="w-full h-full flex items-center justify-center bg-gray-900">
           <div class="animate-spin rounded-full h-12 lg:h-16 w-12 lg:w-16 border-t-4 border-b-4 border-[#00d4ff]"></div>
         </div>
       `;
 
-      try {
-        await Promise.all([
-          preloadImage(producto.fondo),
-          preloadImage(producto.producto),
-        ]);
+        try {
+          await Promise.all([
+            preloadImage(producto.fondo),
+            preloadImage(producto.producto),
+          ]);
 
-        const buttonSize = producto.relacionados.length === 1 ? "w-[20%] lg:w-[16%] xl:w-[15%] 2xl:w-[20%]" : "w-[16%] lg:w-[13%] ";
-        const botonesHTML = producto.relacionados.map(rel => `
+          const buttonSize =
+            producto.relacionados.length === 1
+              ? "w-[20%] lg:w-[16%] xl:w-[15%] 2xl:w-[20%]"
+              : "w-[16%] lg:w-[13%] ";
+          const botonesHTML = producto.relacionados
+            .map(
+              (rel) => `
           <img 
             src="${rel.btn}" 
             class="${buttonSize} cursor-pointer hover:scale-110 transition-transform duration-300 related-btn will-change-transform opacity-0" 
             data-product="${rel.id}"
             alt="Ver ${rel.id}">
-        `).join("");
+        `,
+            )
+            .join("");
 
-        modalContent.innerHTML = `
+          modalContent.innerHTML = `
           <div class="w-full h-full relative">
             <img 
               id="background-image"
@@ -434,189 +543,208 @@ const productosDataWithPaths = {
           </div>
         `;
 
-        const tl = gsap.timeline({
-          onComplete: () => {
-            isAnimating = false;
-            startFloatingAnimation();
-          },
-        });
+          const tl = gsap.timeline({
+            onComplete: () => {
+              isAnimating = false;
+              startFloatingAnimation();
+            },
+          });
 
-        tl.to("#background-image", {
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.out",
-        })
-        .fromTo("#product-image", 
-          { opacity: 0, y: -100, scale: 0.8 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.2)" },
-          "-=0.2"
-        )
-        .to("#close-modal", {
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        }, "-=0.4")
-        .to(".related-btn", {
-          opacity: 1,
-          y: 0,
-          duration: 0.4,
-          stagger: 0.1,
-          ease: "power2.out",
-        }, "-=0.3");
-
-        document.getElementById("close-modal").addEventListener("click", (e) => {
-          e.stopPropagation();
-          closeModal();
-        });
-
-        document.querySelectorAll(".related-btn").forEach((btn) => {
-          btn.addEventListener("click", function (e) {
-            e.stopPropagation();
-            if (isAnimating) return;
-
-            const newProduct = this.dataset.product;
-
-            if (floatAnimation) {
-              floatAnimation.kill();
-              floatAnimation = null;
-            }
-
-            const productImage = document.getElementById("product-image");
-            gsap.to(productImage, {
-              opacity: 0,
-              scale: 0.8,
-              duration: 0.3,
-              ease: "power2.in",
-              onComplete: () => {
-                openModal(newProduct);
+          tl.to("#background-image", {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+          })
+            .fromTo(
+              "#product-image",
+              { opacity: 0, y: -100, scale: 0.8 },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.7,
+                ease: "back.out(1.2)",
               },
+              "-=0.2",
+            )
+            .to(
+              "#close-modal",
+              {
+                opacity: 1,
+                duration: 0.3,
+                ease: "power2.out",
+              },
+              "-=0.4",
+            )
+            .to(
+              ".related-btn",
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.4,
+                stagger: 0.1,
+                ease: "power2.out",
+              },
+              "-=0.3",
+            );
+
+          document
+            .getElementById("close-modal")
+            .addEventListener("click", (e) => {
+              e.stopPropagation();
+              closeModal();
+            });
+
+          document.querySelectorAll(".related-btn").forEach((btn) => {
+            btn.addEventListener("click", function (e) {
+              e.stopPropagation();
+              if (isAnimating) return;
+
+              const newProduct = this.dataset.product;
+
+              if (floatAnimation) {
+                floatAnimation.kill();
+                floatAnimation = null;
+              }
+
+              const productImage = document.getElementById("product-image");
+              gsap.to(productImage, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.3,
+                ease: "power2.in",
+                onComplete: () => {
+                  openModal(newProduct);
+                },
+              });
             });
           });
-        });
-      } catch (error) {
-        console.error("Error al cargar imágenes:", error);
-        closeModal();
-        isAnimating = false;
-      }
-    }
-
-    function startFloatingAnimation() {
-      const productImage = document.getElementById("product-image");
-      if (!productImage) return;
-
-      if (floatAnimation) {
-        floatAnimation.kill();
-      }
-
-      floatAnimation = gsap.to(productImage, {
-        y: "+=30",
-        duration: 2.5,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
-    }
-
-    function closeModal() {
-      if (isAnimating) return;
-
-      const modal = document.getElementById("product-modal");
-      const modalContent = document.getElementById("modal-content");
-
-      if (floatAnimation) {
-        floatAnimation.kill();
-        floatAnimation = null;
-      }
-
-      isAnimating = true;
-
-      gsap.to(modalContent, {
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.3,
-        ease: "power2.in",
-        onComplete: () => {
-          modal.classList.add("hidden");
-          modalContent.style.opacity = "1";
-          modalContent.style.transform = "scale(1)";
+        } catch (error) {
+          console.error("Error al cargar imágenes:", error);
+          closeModal();
           isAnimating = false;
+        }
+      }
+
+      function startFloatingAnimation() {
+        const productImage = document.getElementById("product-image");
+        if (!productImage) return;
+
+        if (floatAnimation) {
+          floatAnimation.kill();
+        }
+
+        floatAnimation = gsap.to(productImage, {
+          y: "+=30",
+          duration: 2.5,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
+      }
+
+      function closeModal() {
+        if (isAnimating) return;
+
+        const modal = document.getElementById("product-modal");
+        const modalContent = document.getElementById("modal-content");
+
+        if (floatAnimation) {
+          floatAnimation.kill();
+          floatAnimation = null;
+        }
+
+        isAnimating = true;
+
+        gsap.to(modalContent, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            modal.classList.add("hidden");
+            modalContent.style.opacity = "1";
+            modalContent.style.transform = "scale(1)";
+            isAnimating = false;
+          },
+        });
+      }
+
+      // Animaciones iniciales
+      gsap.from("#hero-title h1", {
+        y: -30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      gsap.from("#hero-line", {
+        scaleX: 0,
+        duration: 0.6,
+        delay: 0.2,
+        ease: "power2.out",
+      });
+
+      gsap.from("#hero-subtitle", {
+        y: 15,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.4,
+      });
+
+      gsap.from(".product-card", {
+        scrollTrigger: {
+          trigger: ".product-card",
+          start: "top 85%",
+          once: true,
         },
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: "power2.out",
+      });
+
+      document.querySelectorAll(".product-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          const productKey = this.dataset.product;
+          openModal(productKey);
+        });
+      });
+
+      document
+        .getElementById("product-modal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+
+      document.addEventListener("keydown", function (e) {
+        const modal = document.getElementById("product-modal");
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          closeModal();
+        }
       });
     }
 
-    // Animaciones iniciales
-    gsap.from("#hero-title h1", {
-      y: -30,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.out",
-    });
+    // Esperar a que gsap esté cargado
+    if (window.gsap) {
+      initAnimations();
+    } else {
+      window.addEventListener("gsap-loaded", initAnimations);
+    }
+  </script>
+  <style>
+    /* Optimización de rendering */
+    .will-change-transform {
+      will-change: transform;
+    }
 
-    gsap.from("#hero-line", {
-      scaleX: 0,
-      duration: 0.6,
-      delay: 0.2,
-      ease: "power2.out",
-    });
-
-    gsap.from("#hero-subtitle", {
-      y: 15,
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.4,
-    });
-
-    gsap.from(".product-card", {
-      scrollTrigger: {
-        trigger: ".product-card",
-        start: "top 85%",
-        once: true,
-      },
-      y: 50,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: "power2.out",
-    });
-
-    document.querySelectorAll(".product-card").forEach((card) => {
-      card.addEventListener("click", function () {
-        const productKey = this.dataset.product;
-        openModal(productKey);
-      });
-    });
-
-    document.getElementById("product-modal").addEventListener("click", function (e) {
-      if (e.target === this) {
-        closeModal();
-      }
-    });
-
-    document.addEventListener("keydown", function (e) {
-      const modal = document.getElementById("product-modal");
-      if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-        closeModal();
-      }
-    });
-  }
-
-  // Esperar a que gsap esté cargado
-  if (window.gsap) {
-    initAnimations();
-  } else {
-    window.addEventListener('gsap-loaded', initAnimations);
-  }
-</script>
-    <style>
-        /* Optimización de rendering */
-        .will-change-transform {
-            will-change: transform;
-        }
-
-        /* Suavizar animaciones */
-        * {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-    </style>
+    /* Suavizar animaciones */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
 </Layout>
